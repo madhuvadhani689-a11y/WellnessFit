@@ -1,0 +1,3 @@
+MongoDB connected
+[workout-reminder] Background scheduler started (every 60s).
+Server listening on http://localhost:5000

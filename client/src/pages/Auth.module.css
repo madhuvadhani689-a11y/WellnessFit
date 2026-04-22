@@ -1,0 +1,71 @@
+.page { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+
+/* LEFT */
+.visual { background: var(--green); padding: 60px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.visual::before { content: ''; position: absolute; right: -100px; bottom: -100px; width: 380px; height: 380px; border-radius: 50%; background: rgba(124,154,126,.12); }
+.visLogo { font-family: var(--font-head); font-size: 1.7rem; font-weight: 900; color: #fff; margin-bottom: 44px; }
+.visLogo span { color: var(--sage-light); }
+.visTitle { font-family: var(--font-head); font-size: 2.2rem; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 18px; }
+.visTitle em { font-style: italic; color: var(--sage-light); }
+.visDesc { color: rgba(255,255,255,.55); font-size: .95rem; line-height: 1.7; margin-bottom: 36px; max-width: 340px; }
+.visList { list-style: none; display: flex; flex-direction: column; gap: 13px; position: relative; }
+.visList li { display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,.65); font-size: .88rem; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sage-light); flex-shrink: 0; }
+
+/* RIGHT */
+.formWrap { display: flex; align-items: center; justify-content: center; padding: 60px 48px; background: var(--cream); overflow-y: auto; }
+.formBox { width: 100%; max-width: 420px; }
+.formTitle { font-family: var(--font-head); font-size: 1.9rem; color: var(--green); font-weight: 900; margin-bottom: 6px; }
+.formSub { color: var(--muted); font-size: .88rem; margin-bottom: 24px; }
+.switchLink { border: none; background: none; color: var(--sage); font-weight: 700; cursor: pointer; font-size: .88rem; padding: 0; }
+
+.portalGrid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 22px; }
+.portalSingle {
+  border: 1.5px solid rgba(124,154,126,.18);
+  background: rgba(124,154,126,.06);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 22px;
+}
+.portalBtn {
+  border: 1.5px solid rgba(124,154,126,.18);
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.portalBtn:hover { border-color: var(--sage); background: rgba(124,154,126,.05); }
+.portalBtnActive { border-color: var(--green); background: rgba(124,154,126,.08); box-shadow: var(--shadow-sm); }
+.portalLabel { font-size: .86rem; font-weight: 700; color: var(--green); }
+.portalAccent { font-size: .75rem; color: var(--muted); }
+
+.tabs { display: flex; background: rgba(124,154,126,.08); border-radius: var(--radius-sm); padding: 4px; margin-bottom: 22px; }
+.tab { flex: 1; padding: 9px; border: none; background: none; font-family: var(--font-body); font-size: .88rem; font-weight: 600; color: var(--muted); cursor: pointer; border-radius: 7px; transition: all var(--transition); }
+.active { background: var(--white); color: var(--green); box-shadow: var(--shadow-sm); }
+
+.error { background: rgba(220,60,60,.07); border: 1px solid rgba(220,60,60,.2); color: #c0392b; padding: 10px 14px; border-radius: var(--radius-sm); font-size: .84rem; margin-bottom: 16px; }
+.helper { background: rgba(124,154,126,.08); border: 1px solid rgba(124,154,126,.16); color: var(--green); padding: 10px 14px; border-radius: var(--radius-sm); font-size: .82rem; margin-top: 14px; line-height: 1.6; }
+
+.goalGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.goalBtn { padding: 11px 6px; border: 1.5px solid rgba(124,154,126,.2); border-radius: var(--radius-sm); background: var(--white); cursor: pointer; font-family: var(--font-body); font-size: .78rem; font-weight: 600; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 5px; transition: all var(--transition); }
+.goalBtn span { font-size: 1.3rem; }
+.goalBtn.goalActive { border-color: var(--sage); background: rgba(124,154,126,.08); color: var(--green); }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.divider { display: flex; align-items: center; gap: 12px; margin: 18px 0; color: var(--muted); font-size: .78rem; }
+.divider::before,.divider::after { content: ''; flex: 1; height: 1px; background: rgba(0,0,0,.08); }
+
+@media (max-width: 768px) {
+  .page { grid-template-columns: 1fr; }
+  .visual { display: none; }
+  .formWrap { padding: 40px 24px; }
+}

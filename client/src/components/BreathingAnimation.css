@@ -1,0 +1,106 @@
+.breathing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.breathing-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #3d5a3e; /* soft green matching hex requirement */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 70px;
+  box-shadow: 0 4px 20px rgba(61, 90, 62, 0.4);
+  /* 12s total for Inhale 4s, Hold 4s, Exhale 4s */
+  animation: breatheScale 12s linear infinite;
+  animation-play-state: paused;
+}
+
+.breathing-circle.active {
+  animation-play-state: running;
+}
+
+@keyframes breatheScale {
+  0% {
+    transform: scale(1);
+  }
+  33.33% {
+    transform: scale(1.6);
+  }
+  66.66% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.circle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Reverse scaling to keep text perfectly static visually */
+  animation: inverseScale 12s linear infinite;
+  animation-play-state: paused;
+}
+
+.breathing-circle.active .circle-content {
+  animation-play-state: running;
+}
+
+@keyframes inverseScale {
+  0% {
+    transform: scale(1);
+  }
+  33.33% {
+    transform: scale(0.625);
+  }
+  66.66% {
+    transform: scale(0.625);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.phase-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  letter-spacing: 1px;
+}
+
+.time-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.cycles-text {
+  font-size: 1.1rem;
+  color: #3d5a3e;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.start-stop-btn {
+  background-color: #3d5a3e;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.start-stop-btn:hover {
+  background-color: #2b402c;
+  transform: translateY(-1px);
+}

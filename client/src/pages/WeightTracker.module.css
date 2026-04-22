@@ -1,0 +1,18 @@
+.layout { display: flex; min-height: 100vh; }
+.main   { flex: 1; padding: 32px 36px; display: flex; flex-direction: column; gap: 22px; overflow-y: auto; }
+.statRow {}
+.twoCol { display: grid; grid-template-columns: 1.6fr 1fr; gap: 22px; }
+
+.pTab { padding: 5px 12px; border-radius: 7px; border: none; background: none; font-family: var(--font-body); font-size: .76rem; font-weight: 600; color: var(--muted); cursor: pointer; transition: all var(--transition); }
+.pTab.pActive { background: var(--green); color: #fff; }
+
+.histList { display: flex; flex-direction: column; gap: 8px; max-height: 320px; overflow-y: auto; }
+.histItem { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--bg); border-radius: var(--radius-sm); }
+.histDate   { font-size: .78rem; color: var(--muted); min-width: 70px; }
+.histWeight { font-family: var(--font-head); font-size: 1.05rem; color: var(--green); font-weight: 700; flex: 1; }
+.histDiff   { font-size: .76rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; }
+.histNote   { font-size: .74rem; color: var(--muted); font-style: italic; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100px; }
+.delBtn     { border: none; background: none; color: rgba(0,0,0,.2); cursor: pointer; font-size: .8rem; padding: 2px 6px; border-radius: 5px; transition: all var(--transition); }
+.delBtn:hover { background: #fee2e2; color: #dc2626; }
+
+@media (max-width: 900px) { .twoCol { grid-template-columns: 1fr; } .main { padding: 20px 16px; } }

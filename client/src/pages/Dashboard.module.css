@@ -1,0 +1,31 @@
+.layout { display: flex; min-height: 100vh; }
+.main   { flex: 1; padding: 32px 36px; overflow-y: auto; display: flex; flex-direction: column; gap: 22px; }
+
+.topBar { display: flex; justify-content: space-between; align-items: flex-start; }
+.greeting { font-family: var(--font-head); font-size: 1.7rem; color: var(--green); font-weight: 900; }
+.greetSub { color: var(--muted); font-size: .88rem; margin-top: 3px; }
+.dateBadge { background: var(--white); padding: 9px 16px; border-radius: var(--radius-sm); font-size: .82rem; color: var(--muted); font-weight: 500; box-shadow: var(--shadow-sm); }
+
+.statGrid { }
+.statCard { }
+.statIcon { font-size: 1.5rem; margin-bottom: 12px; }
+.statVal  { font-family: var(--font-head); font-size: 1.6rem; color: var(--green); font-weight: 900; }
+.statLbl  { font-size: .78rem; color: var(--muted); margin-top: 3px; font-weight: 500; }
+.statTrend { font-size: .76rem; font-weight: 600; margin-top: 6px; }
+
+.chartRow {}
+.periodTabs { display: flex; gap: 4px; }
+.pTab { padding: 5px 12px; border-radius: 8px; border: none; background: none; font-family: var(--font-body); font-size: .76rem; font-weight: 600; color: var(--muted); cursor: pointer; transition: all var(--transition); }
+.pTab.pActive { background: var(--green); color: #fff; }
+
+.mealRow { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--bg); border-radius: var(--radius-sm); margin-bottom: 8px; }
+
+.cycleMini { background: var(--green); border-radius: var(--radius-md); padding: 16px; text-align: center; margin-bottom: 14px; }
+.cycleBig { font-family: var(--font-head); font-size: 2.2rem; color: #fff; font-weight: 900; }
+.cycleSub { font-size: .75rem; color: rgba(255,255,255,.55); margin-top: 3px; }
+
+.workoutRow { display: flex; align-items: center; gap: 10px; padding: 9px 11px; background: var(--bg); border-radius: var(--radius-sm); cursor: pointer; transition: background var(--transition); }
+.workoutRow:hover { background: rgba(124,154,126,.1); }
+.check { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex-shrink: 0; transition: all var(--transition); }
+
+@media (max-width: 768px) { .main { padding: 20px 16px; } }

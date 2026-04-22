@@ -1,0 +1,245 @@
+/* c:\Users\MADHUVADHANI\wellnessfit\client\src\trainer-layout.css */
+
+.trainer-theme {
+  --bg-primary: #faf9f6;
+  --bg-card: #ffffff;
+  --bg-stat: #f5f2eb;
+  --accent-green: #3d5a3e;
+  --accent-green-hover: #2d4a2e;
+  --accent-gold: #f59e0b;
+  --text-primary: #2c2c2a;
+  --text-muted: #5f5e5a;
+  --border-color: #e8e4dc;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --sidebar-bg: #2d4a2e;
+  --sidebar-text: #ffffff;
+
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-family: inherit;
+}
+
+/* Base typography overrides */
+.trainer-theme h1, .trainer-theme h2, .trainer-theme h3, .trainer-theme p, .trainer-theme span {
+  margin: 0;
+}
+
+.trainer-theme .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.trainer-theme .section-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Card Style */
+.trainer-theme .trainer-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: none;
+}
+
+/* Stat Cards */
+.trainer-theme .stat-card {
+  background-color: var(--bg-stat);
+  border-radius: 10px;
+  padding: 20px;
+}
+.trainer-theme .stat-card-number {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c2c2a;
+  margin-bottom: 4px;
+}
+.trainer-theme .stat-card-label {
+  font-size: 13px;
+  color: #5f5e5a;
+}
+
+/* Buttons */
+.trainer-theme .btn-outline {
+  background: transparent;
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.trainer-theme .btn-outline:hover {
+  background: var(--bg-stat);
+}
+
+.trainer-theme .btn-filled {
+  background: var(--accent-green);
+  border: 1px solid var(--accent-green);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.trainer-theme .btn-filled:hover {
+  background: var(--accent-green-hover);
+  border-color: var(--accent-green-hover);
+}
+
+/* Forms */
+.trainer-theme .form-label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.trainer-theme .form-input, .trainer-theme .form-select, .trainer-theme .form-textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.trainer-theme .form-input:focus, .trainer-theme .form-select:focus, .trainer-theme .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-green);
+}
+
+/* Sidebar specific overrides */
+.trainer-theme .trainer-sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  position: static; /* Removing sticky since requested layout is simple flex */
+  border-right: none;
+}
+
+.trainer-theme .trainer-sidebar-item {
+  padding: 12px 24px;
+  color: var(--sidebar-text);
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.trainer-theme .trainer-sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.trainer-theme .trainer-sidebar-item.active {
+  border-left-color: #4ade80;
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Layout Utilities */
+.trainer-theme.flex, .trainer-theme .flex { display: flex; }
+.trainer-theme .flex-col { display: flex; flex-direction: column; }
+.trainer-theme .items-center { align-items: center; }
+.trainer-theme .justify-between { justify-content: space-between; }
+.trainer-theme .gap-16 { gap: 16px; }
+.trainer-theme .gap-24 { gap: 24px; }
+.trainer-theme .gap-8 { gap: 8px; }
+.trainer-theme .mb-24 { margin-bottom: 24px; }
+.trainer-theme .mt-24 { margin-top: 24px; }
+.trainer-theme .px-32 { padding-left: 32px; padding-right: 32px; }
+.trainer-theme .py-32 { padding-top: 32px; padding-bottom: 32px; }
+.trainer-theme .w-full { width: 100%; }
+.trainer-theme .grid { display: grid; }
+.trainer-theme .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.trainer-theme .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+.trainer-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.trainer-content {
+  flex: 1;
+  padding: 28px 32px;
+  overflow-y: auto;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Badges */
+.trainer-theme .badge {
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.trainer-theme .badge-outline-green {
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+}
+.trainer-theme .badge-green { background: rgba(61, 90, 62, 0.15); color: var(--accent-green); }
+.trainer-theme .badge-gray { background: rgba(95, 94, 90, 0.15); color: var(--text-muted); }
+.trainer-theme .badge-red { background: rgba(239, 68, 68, 0.15); color: var(--danger-color); }
+.trainer-theme .badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+.trainer-theme .badge-orange { background: rgba(249, 115, 22, 0.15); color: #fb923c; }
+.trainer-theme .badge-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+
+/* Dashboard tables */
+.trainer-theme .table-header {
+  display: grid;
+  grid-template-columns: 100px 1fr 2fr 120px;
+  padding: 12px 16px;
+  background: var(--bg-stat);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+.trainer-theme .table-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 2fr 120px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  background: #ffffff;
+}
+.trainer-theme .table-row:hover {
+  background: var(--bg-primary);
+}
+.trainer-theme .table-row:last-child {
+  border-bottom: none;
+}

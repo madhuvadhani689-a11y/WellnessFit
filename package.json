@@ -1,0 +1,14 @@
+{
+    "name":  "wellnessfit",
+    "version":  "1.0.0",
+    "description":  "WellnessFit – Weight \u0026 PCOD Wellness App",
+    "scripts":  {
+    "dev":  "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+                    "server":  "npm --prefix server run dev",
+                    "client":  "npm --prefix client run dev",
+                    "install-all":  "npm install \u0026\u0026 cd server \u0026\u0026 npm install \u0026\u0026 cd ../client \u0026\u0026 npm install"
+                },
+    "devDependencies":  {
+                            "concurrently":  "^8.2.0"
+                        }
+}

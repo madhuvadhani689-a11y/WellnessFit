@@ -1,0 +1,274 @@
+.layout { display: flex; min-height: 100vh; }
+.main   { flex: 1; padding: 40px 48px; display: flex; flex-direction: column; gap: 32px; overflow-y: auto; background-color: #faf9f6; }
+
+.wheelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pillContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pillStat {
+  background: white;
+  border: 1px solid rgba(168, 197, 160, 0.4);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3d5a3e;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+}
+
+.inlineToast {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--green);
+  color: #fff;
+  font-size: .84rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.topActionRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.calGrid { display: grid; grid-template-columns: repeat(7,1fr); gap: 5px; margin-bottom: 14px; }
+.calLabel { text-align: center; font-size: .68rem; color: var(--muted); font-weight: 700; padding: 4px 0; }
+.calDay   { text-align: center; padding: 7px 3px; border-radius: 8px; font-size: .78rem; font-weight: 500; color: var(--charcoal); cursor: pointer; transition: background var(--transition); }
+.calDay:hover { background: rgba(124,154,126,.1); }
+.period     { background: rgba(232,180,160,.45); font-weight: 700; }
+.ovulation  { background: rgba(124,154,126,.35); font-weight: 700; }
+.fertile    { background: rgba(201,168,76,.2); }
+.today      { border: 2px solid var(--green); font-weight: 700; }
+
+.legend { display: flex; gap: 16px; flex-wrap: wrap; }
+.legendItem { display: flex; align-items: center; gap: 6px; font-size: .73rem; color: var(--muted); }
+.calendarMeta {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: .76rem;
+  color: var(--muted);
+}
+
+.symGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 8px; }
+.symBtnCircle {
+  padding: 16px 8px; border: 1.5px solid rgba(124,154,126,.15); border-radius: 12px;
+  background: white; cursor: pointer; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.symBtnCircle:hover { background: rgba(168,197,160,.1); border-color: #a8c5a0; transform: translateY(-2px); }
+.symBtnCircle.symOnCircle { border-color: #a8c5a0; background: rgba(168,197,160,.15); }
+.symLabelText { font-size: .75rem; font-weight: 600; color: #555; }
+
+.inputsGrid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.notes {
+  width: 100%;
+  min-height: 86px;
+  resize: vertical;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(124,154,126,.25);
+  padding: 10px 12px;
+  font-family: var(--font-body);
+  font-size: .86rem;
+}
+
+.notes:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(124,154,126,.12);
+}
+
+.metric {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.metricLabel {
+  font-size: .74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.metricValue {
+  font-family: var(--font-head);
+  color: var(--green);
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 4px;
+}
+
+.reminderBox {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(124,154,126,.2);
+  background: linear-gradient(180deg, rgba(124,154,126,.12), rgba(124,154,126,.06));
+}
+
+.reminderHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.reminderHeading {
+  min-width: 0;
+}
+
+.reminderTitle {
+  font-size: .9rem;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.reminderSub {
+  margin: 6px 0 0;
+  font-size: .75rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.reminderState {
+  border-radius: 999px;
+  border: 1px solid rgba(124,154,126,.25);
+  background: var(--white);
+  color: var(--muted);
+  padding: 6px 10px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.reminderStateOn {
+  border-color: rgba(124,154,126,.45);
+  color: var(--green);
+  background: rgba(124,154,126,.18);
+}
+
+.reminderControls {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.reminderLead {
+  margin-top: 8px;
+}
+
+.toggleRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1.5px solid rgba(124,154,126,.2);
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.reminderDays {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.reminderDay {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid rgba(124,154,126,.2);
+  background: var(--white);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: .76rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+
+.dayCheckbox {
+  margin: 0;
+}
+
+.reminderDayOn {
+  background: rgba(124,154,126,.12);
+  border-color: var(--sage);
+  color: var(--green);
+}
+
+.reminderSaveRow {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.topActionRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.topSaveBtn {
+  min-width: 220px;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 20px 16px;
+  }
+
+  .inputsGrid { grid-template-columns: 1fr; }
+
+  .reminderHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reminderSaveRow {
+    justify-content: stretch;
+  }
+
+  .reminderSaveRow :global(.btn) {
+    width: 100%;
+  }
+
+  .topActionRow {
+    justify-content: stretch;
+  }
+
+  .topSaveBtn {
+    width: 100%;
+    min-width: 0;
+  }
+}

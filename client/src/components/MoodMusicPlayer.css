@@ -1,0 +1,255 @@
+.mood-player-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mood-cards-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.mood-card {
+  flex: 1;
+  min-width: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.2rem 0.5rem;
+  border-radius: 12px;
+  background-color: #f7f9f7;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mood-card.active {
+  background-color: #eaf1eb;
+  border-color: #3d5a3e; /* Theme Green */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(61, 90, 62, 0.15);
+}
+
+.mood-card:not(.active):hover {
+  background-color: #f0f4f0;
+  transform: translateY(-1px);
+}
+
+.mood-icon {
+  font-size: 2rem;
+}
+
+.mood-label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.mood-card.active .mood-label {
+  color: #3d5a3e;
+}
+
+/* Playlist Tab Styles */
+.playlist-card {
+  border: 2px dashed #ccc;
+  background-color: #fff;
+}
+.playlist-card.active {
+  border-style: solid;
+}
+
+.playlist-badge {
+  background-color: #3d5a3e;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: 12px;
+  margin-left: 6px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mood-card:not(.active) .playlist-badge {
+  background-color: #888;
+}
+
+.search-container {
+  width: 100%;
+}
+
+.song-search-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.song-search-input:focus {
+  outline: none;
+  border-color: #3d5a3e;
+  box-shadow: 0 0 0 3px rgba(61, 90, 62, 0.1);
+}
+
+.song-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Custom scrollbar */
+.song-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+.song-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 4px;
+}
+.song-list-container::-webkit-scrollbar-thumb {
+  background: #c1ccc3; 
+  border-radius: 4px;
+}
+.song-list-container::-webkit-scrollbar-thumb:hover {
+  background: #aab5ac; 
+}
+
+.song-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  transition: transform 0.2s, border-color 0.2s;
+  flex-wrap: wrap; /* responsive flex wrap */
+  gap: 1rem;
+}
+
+.song-row:hover {
+  transform: translateX(4px);
+  border-color: #ddd;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.song-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #2c3e30;
+}
+
+.song-artist {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.song-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.song-language-badge {
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.song-language-badge.tamil {
+  background-color: #fff0e6;
+  color: #e65c00;
+}
+
+.song-language-badge.english {
+  background-color: #e6f0ff;
+  color: #005ce6;
+}
+
+/* YouTube Play Button */
+.yt-play-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.yt-play-btn:hover {
+  background-color: #cc0000;
+}
+
+.yt-icon {
+  font-size: 0.75rem;
+}
+
+/* Add/Remove Playlist Button */
+.playlist-action-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.playlist-action-btn.add {
+  color: #3d5a3e;
+  background-color: #eaf1eb;
+}
+
+.playlist-action-btn.add:hover {
+  background-color: #3d5a3e;
+  color: white;
+}
+
+.playlist-action-btn.remove {
+  color: #d9534f;
+  background-color: #fbecec;
+}
+
+.playlist-action-btn.remove:hover {
+  background-color: #d9534f;
+  color: white;
+}
+
+.no-songs {
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+  font-style: italic;
+  background: #f9f9f9;
+  border-radius: 8px;
+}

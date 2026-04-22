@@ -1,0 +1,137 @@
+.layout { display: flex; min-height: 100vh; }
+.main   { flex: 1; padding: 32px 36px; display: flex; flex-direction: column; gap: 22px; overflow-y: auto; }
+.twoCol { display: grid; grid-template-columns: 1.5fr 1fr; gap: 22px; }
+
+.dayTabs { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 18px; }
+.dTab { padding: 7px 13px; border-radius: 8px; border: none; background: rgba(124,154,126,.08); font-family: var(--font-body); font-size: .78rem; font-weight: 600; color: var(--muted); cursor: pointer; white-space: nowrap; transition: all var(--transition); }
+.dTab.dActive { background: var(--green); color: #fff; }
+
+.mealSection { margin-bottom: 20px; }
+.mealSectionTitle { font-size: .76rem; font-weight: 700; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+.mealRow { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--bg); border-radius: var(--radius-sm); margin-bottom: 7px; cursor: pointer; transition: background var(--transition); }
+.mealRow:hover { background: rgba(124,154,126,.08); }
+.mealEmoji { font-size: 1.1rem; }
+.mealCheck { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid rgba(124,154,126,.3); display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; color: var(--white); flex-shrink: 0; transition: all var(--transition); cursor: pointer; }
+.mealDone { background: var(--sage); border-color: var(--sage); }
+
+.cupGrid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
+.cup { aspect-ratio: 1; border-radius: var(--radius-sm); border: 1.5px solid rgba(124,154,126,.2); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition); font-size: 1.1rem; background: var(--white); }
+.cup:hover { border-color: var(--sage); }
+.cupFull { background: rgba(100,160,220,.12); border-color: rgba(100,160,220,.4); }
+
+.prefGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.prefPlan {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prefRow {
+  background: rgba(124,154,126,.08);
+  border-radius: var(--radius-sm);
+  padding: 9px 10px;
+}
+
+.prefTitle {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.prefDish {
+  font-size: .86rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.prefMeta {
+  font-size: .76rem;
+  color: var(--charcoal);
+}
+
+.prefReason {
+  font-size: .74rem;
+  color: var(--muted);
+}
+
+.prefHint {
+  margin-top: 10px;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* --- Weekly Trigger & Search --- */
+.weeklyBtn { margin-left: auto; background: var(--blush); color: var(--gold); border: none; padding: 6px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+.weeklyBtn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+
+.searchInput { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); font-family: var(--font-body); margin-bottom: 15px; font-size: 0.85rem; }
+.searchInput:focus { outline: none; border-color: var(--sage); }
+
+/* --- Phase Banner --- */
+.phaseBanner { border-radius: 16px; padding: 16px; margin-bottom: 20px; transition: 0.3s; color: var(--text-dark); }
+.phaseBanner.menstrual { background: linear-gradient(135deg, rgba(234, 137, 154, 0.15), rgba(234, 137, 154, 0.05)); border: 1px solid rgba(234, 137, 154, 0.3); }
+.phaseBanner.follicular { background: linear-gradient(135deg, rgba(124, 154, 126, 0.15), rgba(124, 154, 126, 0.05)); border: 1px solid rgba(124, 154, 126, 0.3); }
+.phaseBanner.ovulation { background: linear-gradient(135deg, rgba(230, 185, 128, 0.2), rgba(230, 185, 128, 0.05)); border: 1px solid rgba(230, 185, 128, 0.4); }
+.phaseBanner.luteal { background: linear-gradient(135deg, rgba(160, 155, 200, 0.15), rgba(160, 155, 200, 0.05)); border: 1px solid rgba(160, 155, 200, 0.3); }
+
+.phaseHeader { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.phaseHeader h3 { margin: 0; font-family: var(--font-head); font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+.phaseChevron { font-size: 1.2rem; color: var(--muted); transition: transform 0.3s; }
+.phaseChevron.open { transform: rotate(180deg); }
+
+.phaseContent { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 0.82rem; }
+.phaseContent h4 { margin: 0 0 6px 0; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); }
+.phaseRecList, .phaseAvoidList { list-style: none; padding: 0; margin: 0 0 10px 0; }
+.phaseRecList li, .phaseAvoidList li { margin-bottom: 4px; display: flex; gap: 6px; }
+.phaseRecList li::before { content: "✓"; color: var(--sage); font-weight: bold; }
+.phaseAvoidList li::before { content: "✕"; color: var(--blush); font-weight: bold; }
+.phaseReason { font-style: italic; color: var(--muted); margin-top: 8px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 8px; grid-column: 1 / -1; }
+
+/* --- Energy Balance --- */
+.energyBalance { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; padding: 18px; border-radius: 16px; background: var(--white); border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+.energyTop { display: flex; justify-content: space-between; align-items: center; }
+.energyStat { text-align: center; }
+.energyStatLabel { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; }
+.energyStatVal { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; color: var(--charcoal); }
+.energyNet { font-family: var(--font-head); font-size: 1.6rem; font-weight: 900; }
+.energyNet.deficit { color: var(--sage); }
+.energyNet.over { color: var(--blush); }
+.energyNet.warning { color: var(--gold); }
+
+.energyBarWrapper { height: 8px; background: rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden; position: relative; }
+.energyProgress { height: 100%; transition: width 0.5s ease-out; }
+.energyFooter { text-align: center; font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+.energyLink { color: var(--sage); text-decoration: none; font-weight: 700; cursor: pointer; }
+.energyLink:hover { text-decoration: underline; }
+
+/* --- Water Bottle Tracker --- */
+.bottleContainer { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 10px 0; }
+.bottleSvg { width: 100px; height: 220px; overflow: visible; filter: drop-shadow(0 8px 16px rgba(126, 200, 227, 0.2)); }
+.bottleOutline { fill: none; stroke: rgba(126, 200, 227, 0.4); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.bottleFill { fill: #7ec8e3; transition: y 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bottleFill.goalReached { fill: #5ba4cf; }
+
+.waterDetails { text-align: center; }
+.waterVol { font-family: var(--font-head); font-size: 1.5rem; font-weight: 900; color: var(--charcoal); margin-bottom: 2px; }
+.waterPct { font-size: 0.85rem; font-weight: 700; color: #7ec8e3; }
+
+.waterBtns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.waterBtn { background: rgba(126, 200, 227, 0.1); border: 1px solid rgba(126, 200, 227, 0.3); border-radius: 12px; padding: 8px 12px; font-size: 0.8rem; font-weight: 600; color: #5ba4cf; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 4px; }
+.waterBtn:hover { background: rgba(126, 200, 227, 0.2); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(126, 200, 227, 0.2); }
+
+.undoWrap { text-align: center; margin-top: 8px; }
+.undoBtn { background: none; border: none; font-size: 0.75rem; color: var(--muted); text-decoration: underline; cursor: pointer; }
+.undoBtn:hover { color: var(--charcoal); }
+
+.waterGoalMsg { font-size: 0.85rem; font-weight: 700; color: var(--green); margin-top: 5px; animation: fadeIn 0.3s; }
+
+@media (max-width: 900px) { .twoCol { grid-template-columns: 1fr; } .main { padding: 20px 16px; } }

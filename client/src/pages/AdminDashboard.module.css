@@ -1,0 +1,141 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  background:
+    radial-gradient(circle at top left, rgba(76, 126, 182, 0.16), transparent 26%),
+    linear-gradient(180deg, #edf2f7 0%, #dde6ef 100%);
+}
+
+.main {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.kicker {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #32506a;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 2.4rem;
+  color: #1f3345;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  max-width: 720px;
+  color: #54677a;
+  line-height: 1.6;
+}
+
+.notice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #2c4861 0%, #1f3345 100%);
+  color: #fff;
+  box-shadow: 0 20px 40px rgba(30, 47, 67, 0.18);
+}
+
+.notice span {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.statCard,
+.moduleCard {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(31, 51, 69, 0.08);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(31, 51, 69, 0.08);
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f3345;
+}
+
+.statLabel {
+  margin-top: 8px;
+  color: #5f7385;
+  font-weight: 700;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.moduleCard h2 {
+  margin: 0 0 14px;
+  color: #1f3345;
+  font-size: 1.05rem;
+}
+
+.moduleCard ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #586a7b;
+  line-height: 1.7;
+}
+
+.quickBar {
+  display: flex;
+  gap: 14px;
+}
+
+.quickBtn {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #1f3345;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+  .hero,
+  .stats,
+  .moduleGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 20px;
+  }
+
+  .quickBar {
+    flex-direction: column;
+  }
+}

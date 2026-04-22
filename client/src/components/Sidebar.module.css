@@ -1,0 +1,88 @@
+.sidebar {
+  width: 248px;
+  min-width: 248px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--green);
+  display: flex;
+  flex-direction: column;
+  padding: 26px 18px;
+  overflow-y: auto;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  padding: 0 8px;
+  margin-bottom: 36px;
+}
+.logo span { color: var(--sage-light); }
+
+.nav { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: .88rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.55);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all var(--transition);
+}
+.navItem:hover { background: rgba(255,255,255,.07); color: rgba(255,255,255,.9); }
+.navItem.active { background: rgba(168,196,162,.22); color: #fff; font-weight: 600; }
+
+.icon { font-size: 1rem; width: 22px; text-align: center; }
+
+.divider { height: 1px; background: rgba(255,255,255,.08); margin: 14px 0; }
+
+.footer { }
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.07);
+  border-radius: var(--radius-sm);
+  padding: 11px 12px;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: .95rem;
+  flex-shrink: 0;
+}
+.userName { font-size: .86rem; font-weight: 600; color: #fff; }
+.userGoal { font-size: .72rem; color: rgba(255,255,255,.45); margin-top: 1px; }
+
+.logoutBtn {
+  border: none;
+  background: none;
+  color: rgba(255,255,255,.35);
+  font-family: var(--font-body);
+  font-size: .75rem;
+  cursor: pointer;
+  padding: 7px 12px;
+  transition: color var(--transition);
+}
+.logoutBtn:hover { color: rgba(255,255,255,.7); }
+
+@media (max-width: 768px) { .sidebar { display: none; } }
